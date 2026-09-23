@@ -1,43 +1,36 @@
 import java.util.Scanner;
+public class IT26102368eLab8Q4 {
 
-public class IT26102368Lab8Q4 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        
-        int[] studentsArray = new int[8];
-        int count = 0;
-
-        
-        while (count < 8) {
-            System.out.print("Enter Student ID for Student " + (count + 1) + ": ");
-            int studentsID = sc.nextInt();
-
-            if (studentsID<= 0) {
-                System.out.println("Error: Please Enter ONLY Positive Numbers");
-            } else {
-                studentsArray[count] =studentsID;
-                count++;
-            }
-   
-       
-        boolean isFound = false;
-        for (int i = 0; i < studentsArray.length; i++) {
-            if (studentsArray[i] == studentsID) {
-                isFound = true;
-                break;
-            }
-        }
-
-        
-        System.out.println();
-        if (isFound) {
-            System.out.println("Student is Available");
-        } else {
-            System.out.println("Student is Not Available");
-        }
-
-    }
- }
+		
+		int array [] = new int[8];
+		int num;
+		int studentid;
+		
+		Scanner input = new Scanner(System.in);
+		
+		
+        for(int i=0; i<8; i++){
+			System.out.print("Enter a Positive number (" + (i+1) + "/8): ");
+			array[i] = input.nextInt();
+			
+		
+			if(array[i]<=0){
+				System.out.println("Please Enter only Positive numbers");
+				i--;
+				continue;
+			}
+			
+			
+		}
+		System.out.println();
+		System.out.print("Enter a Student ID to Search: ");
+		studentid=input.nextInt();
+		
+		for(int i=0; i<array.length; i++){
+			if(array[i]==studentid){
+				System.out.println("Student ID is Available");
+			}
+		}
+	}		
 }
-             
